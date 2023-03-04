@@ -1,3 +1,10 @@
+import {
+  getCellElementAtIdx,
+  getCellElementList,
+  getCurrentTurnElement,
+  getGameStatusElement,
+} from "./selectors.js";
+
 /**
  * Global variables
  */
@@ -20,3 +27,8 @@ let cellValues = new Array(9).fill("");
  * 4. On replay button click --> reset game to play again.
  *
  */
+
+console.log(getCellElementList());
+console.log(getCellElementAtIdx(4));
+console.log(getCurrentTurnElement());
+console.log(getGameStatusElement());
