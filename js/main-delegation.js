@@ -123,9 +123,17 @@ function initCellElementList() {
   const elementList = getCellElementList();
 
   elementList.forEach((element, index) => {
-    element.addEventListener("click", () => {
-      handleElementList(element, index);
-    });
+    element.dataset.idx = index;
+  });
+
+  const ul = document.getElementById("cellList");
+
+  if (!ul) return;
+  ul.addEventListener("click", (event) => {
+    if (event.target.tagName !== "LI") return;
+
+    const index = event.target.dataset.idx;
+    handleElementList(event.target, index);
   });
 }
 
